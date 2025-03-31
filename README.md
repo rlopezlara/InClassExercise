@@ -24,15 +24,15 @@ In this tutorial, we will create a simple application with two pages. On the fir
 This will automatically open localhost in your browser. To visualize the app in mobile view, right-click the page, inspect the source, and enable the "Toggle Device Toolbar".<br/>
  
 <h3>Coding Part:</h3><br/>
-5.	 Go to the home folder and open home.page.html. We will first add an image to our page. We will delete the default content inside the <p><ion-content></p> tag and update the title to DemoApp.<br/>
-<p>
-"<ion-content class="ion-padding">
+5.	 Go to the home folder and open home.page.html. We will first add an image to our page. We will delete the default content inside the ion-content tag and update the title to DemoApp.<br/>
+<!-- 
+<ion-content class="ion-padding">
 <img alt="JS" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
-</ion-content>"
-</p><br/>
-	
+</ion-content>
+</p>
+-->	<br/>
 6.	Inside our content, we will create a list with 5 anime names:<br/>
-   <p>"
+<!--
  <ion-list class="ion-padding">
     <ion-item >
       <ion-label>Dragon Ball</ion-label>
@@ -50,7 +50,8 @@ This will automatically open localhost in your browser. To visualize the app in 
       <ion-label>Hunter X</ion-label>
     </ion-item>
   </ion-list>"
-  </p> <br/>
+  --> <br/>
+  
 7.	To improve the visual appearance, we will add some color to our list items using Ionic themes:<br/>
 <li>color="primary"</li>
 <li>color="success"</li>
@@ -60,36 +61,38 @@ This will automatically open localhost in your browser. To visualize the app in 
 <br/>
 8.	After the first page is ready, we will add a second page to our app. To do this, use the following command: (First, it needs to stop the live page “ctrl + c”)
 
-	<b>Ionic g page pages/TitleDetails</b><br/>
-
+		Ionic g page pages/TitleDetails
+<br/>
 9.	After creating the second page, a new folder called pages will appear in the SRC folder, containing the necessary files for the new page. If we check the app-routing.module.ts file, we will see a new route for the details page. Rename “title-details” to “details”.
     
 <h4>Important:</h4>
 If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set standalone: false in the component metadata.<br/>
 
 11.	On the second page,title-details. page.html, we will add a Go Back button inside the <ion-title> to return to the home page:
-<br/><p>"
+<br/> 
  <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
 </p><br/>
-11.	In title-details. page.html, we will set up a card component, inside of the <ion-content>:
-<p>
-<ion-card>
-  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-  <ion-card-header>
-    <ion-card-title>Card Title</ion-card-title>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-  </ion-card-header> 
-  <ion-card-content>
-    Here's a small text description for the card content. Nothing more, nothing less.
-  </ion-card-content>
-</ion-card>
-"</p><br/>
+11.	In title-details. page.html, we will set up a card component, inside of the ion-content:<br/>
+<!--
+			<ion-card>
+			  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+			  <ion-card-header>
+			    <ion-card-title>Card Title</ion-card-title>
+			    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+			  </ion-card-header> 
+			  <ion-card-content>
+			    Here's a small text description for the card content. Nothing more, nothing less.
+			  </ion-card-content>
+			</ion-card>
+<--
+
+<br/>
 12.	Now, save the images in the assets folder. <a href="https://drive.google.com/file/d/14iyv0dbGAoO74eym30Wj-7vz04WSRbBi/view?usp=sharing" target="_blank">Here</a> is the list.<br/>
 
 13.	Next, in home.page.ts, we will create a function to navigate to the second page when the user presses an item in the list. The function will also pass the title and image URL to the details page:
-<p>"
+ <!--
 export class HomePage {
   constructor(private router: Router) {}
   goToDetails(title: string, imageUrl: string) {
@@ -98,11 +101,13 @@ export class HomePage {
     });
   }
 }
-	"</p><br/>
+-->	 
+ 
+ <br/>
 <b>Important: import { Router } from '@angular/router';</b><br/>
 
 14.	In details.page.ts, create a function to receive the information and display it in the card:<br/>
-    <p>"
+ <!--
 export class TitleDetailsPage implements OnInit {
   title: string = '';
   imageUrl: string = '';
@@ -116,36 +121,40 @@ export class TitleDetailsPage implements OnInit {
     });
   }
 }
-"</p><br/>
+-->
+<br/>
 <b>Important: import { ActivatedRoute } from '@angular/router';<\b><br/>
 
 15.	Finally, add the click event to each item in the list to pass the title and image to the second page(click)="goToDetails('Dragon Ball', 'assets/Goku.jpg')".
     <br/>
 16.	Finally, in title-details.page.html add the variable [src]="imagePath" and  [alt]="title" in the img tag:<br/>
-    <p>"
-<img [src]="imagePath" [alt]="title" />
-
+    <!--
+	<img [src]="imagePath" [alt]="title" />
+	<--
+<br/>
 In the title tag:
-
+<br/>
+<!--
  <ion-card-title >{{ title }}</ion-card-title> "  
- </p><br/>
+ -->
+ <br/>
 <h3>Demo Application Finished()</h3>
 <br/>
 <h2>Additional information:</h2><br/>
-<br/>
+
 <b>Extension for IONIC:</b>
 <br/>
 The Ionic Extension for Visual Studio Code (VS Code) is a powerful tool that enhances the development experience when working with Ionic projects. It provides a variety of features to streamline, improve your workflow, including Code Snippets, Ionic Commands, and Integrated Debugging and Live Server Preview, among others.
 <br/>
 <h4>Run your project in Visual Studio Android, using these commands:</h4>
-•	npm install @capacitor/core @capacitor/cli
-•	npm install @capacitor/android
-•	npx cap add android
-•	ionic build
-•	npx cap sync android
-•	npx cap open android
-
-<b>Sources : </b><br/>
+<li>npm install @capacitor/core @capacitor/cli</li>
+<li>npm install @capacitor/android</li>
+<li>npx cap add android</li>
+<li>ionic build</li>
+<li>npx cap sync android</li>
+<li>npx cap open android</li>
+<br/>
+<h3>Sources : </h3>
 Official Ionic Framework :<br/>
 https://ionicframework.com/<br/>
 YouTube videos :<br/>
