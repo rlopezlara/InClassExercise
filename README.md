@@ -1,6 +1,6 @@
-Introduction To Ionic Framework:
+#Introduction To Ionic Framework:
 Ionic is an open-source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like Angular, React, and Vue.
-About the Demo Application:
+#About the Demo Application:
 In this tutorial, we will create a simple application with two pages. On the first page, we will display an image and a list of 5 items. When the user presses one of the items, we will navigate to the second page, where a card with an image related to the title will be displayed.
 Instructions:
 1.	Open the terminal in VS Code and run the following command to install Ionic dependencies: 
