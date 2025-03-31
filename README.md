@@ -1,29 +1,29 @@
-#Introduction To Ionic Framework:
+<h1>Introduction To Ionic Framework:</h1><br/>
 Ionic is an open-source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like Angular, React, and Vue.
-#About the Demo Application:
+<h2>About the Demo Application:</h2><br/>
 In this tutorial, we will create a simple application with two pages. On the first page, we will display an image and a list of 5 items. When the user presses one of the items, we will navigate to the second page, where a card with an image related to the title will be displayed.
-Instructions:
+
+<h3>Instructions:</h3><br/>
 1.	Open the terminal in VS Code and run the following command to install Ionic dependencies: 
 
-npm install -g @ionic/cli   
+ <b>npm install -g @ionic/cli</b><br/>
 
 2.	To create an Ionic project, run the following command. This will start the project and ask for the project name, type (blank), and framework to use (Angular, React, or Vue). In our case, we will use Angular:
 
-Ionic start myDemoApp blank –type=angular
+<b>ionic start myDemoApp blank –type=angular</b><br/>
 
 3.	For this demo, we will use ngModule components. After running the command, you will be asked if you want to join the Ionic community. You can type N to skip this.
 
 4.	Once the project is set up, navigate to the project directory using:
 
-cd myAppDemo
+	 <b>cd myAppDemo</b><br/>
 	To run the live page, use the following command:
-ionic serve
-This will automatically open localhost in your browser. To visualize the app in mobile view, right-click the page, inspect the source, and enable the "Toggle Device Toolbar".
-Important:
-All our work will focus on the SRC folder. The home. page. html file contains the visual elements, while home.page.ts contains the components and the HomePage class to set up functionality.
-	Coding Part:  
+	<b>ionic serve</b><br/>
+This will automatically open localhost in your browser. To visualize the app in mobile view, right-click the page, inspect the source, and enable the "Toggle Device Toolbar".<br/>
+ 
+<h3>Coding Part:</h3><br/>
 5.	 Go to the home folder and open home.page.html. We will first add an image to our page. We will delete the default content inside the <ion-content> tag and update the title to DemoApp.
-
+<p>
 <ion-content class="ion-padding">
 <img alt="JS" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
 </ion-content>
@@ -46,6 +46,7 @@ All our work will focus on the SRC folder. The home. page. html file contains th
       <ion-label>Hunter X</ion-label>
     </ion-item>
   </ion-list>
+  </p> <br/>
 7.	To improve the visual appearance, we will add some color to our list items using Ionic themes:
 •	color="primary"
 •	color="success"
@@ -55,19 +56,21 @@ All our work will focus on the SRC folder. The home. page. html file contains th
 
 8.	After the first page is ready, we will add a second page to our app. To do this, use the following command: (First, it needs to stop the live page “ctrl + c”)
 
-Ionic g page pages/TitleDetails
+	<b>Ionic g page pages/TitleDetails</b><br/>
 
-9.	After creating the second page, a new folder called pages will appear in the SRC folder, containing the necessary files for the new page. If we check the app-routing.module.ts file, we will see a new route for the details page. Rename “title-details” to “details”. 
-Important: If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set standalone: false in the component metadata.
+9.	After creating the second page, a new folder called pages will appear in the SRC folder, containing the necessary files for the new page. If we check the app-routing.module.ts file, we will see a new route for the details page. Rename “title-details” to “details”.
+    
+<h4>Important:</h4>h4>
+If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set standalone: false in the component metadata.
 
-10.	On the second page,title-details. page.html, we will add a Go Back button inside the <ion-title> to return to the home page:
-
+11.	On the second page,title-details. page.html, we will add a Go Back button inside the <ion-title> to return to the home page:
+<p>
  <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-
+</p><br/>
 11.	In title-details. page.html, we will set up a card component, inside of the <ion-content>:
-
+<p>
 <ion-card>
   <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
   <ion-card-header>
@@ -78,11 +81,12 @@ Important: If there is an error in the title-details-routing.module.ts, go to ti
     Here's a small text description for the card content. Nothing more, nothing less.
   </ion-card-content>
 </ion-card>
+</p><br/>
+12.	Now, save the images in the assets folder. [Here](https://drive.google.com/file/d/14iyv0dbGAoO74eym30Wj-7vz04WSRbBi/view?usp=sharing) is the list.
 
-12.	Now, save the images in the assets folder.
 
 13.	Next, in home.page.ts, we will create a function to navigate to the second page when the user presses an item in the list. The function will also pass the title and image URL to the details page:
-
+<p>
 export class HomePage {
   constructor(private router: Router) {}
   goToDetails(title: string, imageUrl: string) {
@@ -91,9 +95,11 @@ export class HomePage {
     });
   }
 }
+	</p><br/>
 Important: import { Router } from '@angular/router';
 
 14.	In details.page.ts, create a function to receive the information and display it in the card:
+    <p>
 export class TitleDetailsPage implements OnInit {
   title: string = '';
   imageUrl: string = '';
@@ -107,27 +113,26 @@ export class TitleDetailsPage implements OnInit {
     });
   }
 }
+</p><br/>
 Important: import { ActivatedRoute } from '@angular/router';
 
 15.	Finally, add the click event to each item in the list to pass the title and image to the second page(click)="goToDetails('Dragon Ball', 'assets/Goku.jpg')".
-16.	
-17.	Finally, in title-details.page.html add the variable [src]="imagePath" and  [alt]="title" in the img tag:
+    <br/>
+16.	Finally, in title-details.page.html add the variable [src]="imagePath" and  [alt]="title" in the img tag:
+    <p>
 <img [src]="imagePath" [alt]="title" />
 
 In the title tag:
 
  <ion-card-title >{{ title }}</ion-card-title>   
- 
-Demo Application Finished()
+ </p><br/>
+<h3>Demo Application Finished()</h3>
 
-
-
-
-
-Additional information:
-Extension for IONIC:
+<h2>Additional information:</h2><br/>
+<b>Extension for IONIC:</b>
 The Ionic Extension for Visual Studio Code (VS Code) is a powerful tool that enhances the development experience when working with Ionic projects. It provides a variety of features to streamline, improve your workflow, including Code Snippets, Ionic Commands, and Integrated Debugging and Live Server Preview, among others.
-Run your project in Visual Studio Android, using these commands:
+
+<h4>Run your project in Visual Studio Android, using these commands:</h4>
 •	npm install @capacitor/core @capacitor/cli
 •	npm install @capacitor/android
 •	npx cap add android
@@ -135,7 +140,7 @@ Run your project in Visual Studio Android, using these commands:
 •	npx cap sync android
 •	npx cap open android
 
-Sources : 
+<b>Sources : </b>
 Official Ionic Framework :
 https://ionicframework.com/
 YouTube videos :
@@ -151,18 +156,7 @@ https://ionicacademy.com/
 
 
 
-<ion-list class="ion-padding">
-    <ion-item color="success">
-      <ion-label  routerLink="/details">Dragon Ball</ion-label>
-    </ion-item>
-    <ion-item color="warning">
-      <ion-label>Hunter Knights of the Zodiac </ion-label>
-    </ion-item>
-    <ion-item color="primary">
-      <ion-label>slam dunk</ion-label>
-    </ion-item>
-     
-</ion-content>
+ 
 
 
 
