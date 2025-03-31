@@ -19,7 +19,8 @@ In this tutorial, we will create a simple application with two pages. On the fir
 		  cd myAppDemo
   <br/>
 	To run the live page, use the following command:<br/>
-	<b>ionic serve</b>
+		
+  		  ionic serve
  
 This will automatically open localhost in your browser. To visualize the app in mobile view, right-click the page, inspect the source, and enable the "Toggle Device Toolbar".<br/>
  
@@ -68,9 +69,9 @@ This will automatically open localhost in your browser. To visualize the app in 
 9.	After creating the second page, a new folder called pages will appear in the SRC folder, containing the necessary files for the new page. If we check the app-routing.module.ts file, we will see a new route for the details page. Rename “title-details” to “details”.
     
 <h4>Important:</h4>
-If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set standalone: false in the component metadata.<br/>
+If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set "standalone: false" in the component metadata.<br/>
 
-11.	On the second page,title-details. page.html, we will add a Go Back button inside the <ion-title> to return to the home page:
+10.	On the second page, title-details.page.html, we will add a Go Back button inside the "ion-title" to return to the home page:
 <br/>
 	  	
 	 	<ion-buttons slot="start">
@@ -78,7 +79,7 @@ If there is an error in the title-details-routing.module.ts, go to title-details
 	 	</ion-buttons>
  <br/>
  
-11.	In title-details. page.html, we will set up a card component, inside of the ion-content:<br/>
+11.	In title-details.page.html, we will set up a card component, inside of the ion-content:<br/>
  
 			<ion-card>
 			  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
@@ -93,15 +94,15 @@ If there is an error in the title-details-routing.module.ts, go to title-details
 
 
 <br/>
-12.	Now, save the images in the assets folder. <a href="https://drive.google.com/file/d/14iyv0dbGAoO74eym30Wj-7vz04WSRbBi/view?usp=sharing" target="_blank">Here</a> is the list.<br/>
+12.	Now, save the images in the assets folder. <a href="https://drive.google.com/file/d/14iyv0dbGAoO74eym30Wj-7vz04WSRbBi/view?usp=sharing" target="_blank">Here</a> is the list of images, download them and copy all images into the Assets folder.<br/>
 
 13.	Next, in home.page.ts, we will create a function to navigate to the second page when the user presses an item in the list. The function will also pass the title and image URL to the details page:
 
 		export class HomePage {
  		 constructor(private router: Router) {}
- 		 goToDetails(title: string, imageUrl: string) {
+ 		 goToDetails(title: string, imagePath: string) {
    		 this.router.navigate(['/details'], {
-     		 queryParams: { title: title, image: imageUrl },
+     		 queryParams: { title: title, image: imagePath },
     		});
  		 }
 		} 
@@ -113,20 +114,20 @@ If there is an error in the title-details-routing.module.ts, go to title-details
 	 	
 		export class TitleDetailsPage implements OnInit {
   		title: string = '';
-  		imageUrl: string = '';
+  		imagePath: string = '';
 
   		constructor(private route: ActivatedRoute) {}
 
   		ngOnInit() {
     	this.route.queryParams.subscribe((params) => {
       	this.title = params['title'];
-      	this.imageUrl = params['image'];
+      	this.imagePath = params['image'];
     	});
   		}
 		}
  
 <br/>
-<b>Important: import { ActivatedRoute } from '@angular/router';<\b><br/>
+<b>Important: import { ActivatedRoute } from '@angular/router';</b><br/>
 
 15.	Finally, add the click event to each item in the list to pass the title and image to the second page(click)="goToDetails('Dragon Ball', 'assets/Goku.jpg')".
     <br/>
@@ -136,9 +137,9 @@ If there is an error in the title-details-routing.module.ts, go to title-details
 	 
 <br/>
 In the title tag:
-<br/>
+<br/><br/>
 	
- 	<ion-card-title >{{ title }}</ion-card-title> "  
+ 		<ion-card-title >{{ title }}</ion-card-title> "  
 	
  <br/>
 <h3>Demo Application Finished()</h3>
