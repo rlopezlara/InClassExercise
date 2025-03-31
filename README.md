@@ -17,18 +17,22 @@ In this tutorial, we will create a simple application with two pages. On the fir
 4.	Once the project is set up, navigate to the project directory using:
 
 	 <b>cd myAppDemo</b><br/>
-	To run the live page, use the following command:
-	<b>ionic serve</b><br/>
+  
+	To run the live page, use the following command:<br/>
+	<b>ionic serve</b>
+ 
 This will automatically open localhost in your browser. To visualize the app in mobile view, right-click the page, inspect the source, and enable the "Toggle Device Toolbar".<br/>
  
 <h3>Coding Part:</h3><br/>
-5.	 Go to the home folder and open home.page.html. We will first add an image to our page. We will delete the default content inside the <ion-content> tag and update the title to DemoApp.
+5.	 Go to the home folder and open home.page.html. We will first add an image to our page. We will delete the default content inside the <p><ion-content></p> tag and update the title to DemoApp.<br/>
 <p>
-<ion-content class="ion-padding">
+"<ion-content class="ion-padding">
 <img alt="JS" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
-</ion-content>
-
-6.	Inside our content, we will create a list with 5 anime names:
+</ion-content>"
+</p><br/>
+	
+6.	Inside our content, we will create a list with 5 anime names:<br/>
+   <p>"
  <ion-list class="ion-padding">
     <ion-item >
       <ion-label>Dragon Ball</ion-label>
@@ -45,26 +49,26 @@ This will automatically open localhost in your browser. To visualize the app in 
     <ion-item >
       <ion-label>Hunter X</ion-label>
     </ion-item>
-  </ion-list>
+  </ion-list>"
   </p> <br/>
-7.	To improve the visual appearance, we will add some color to our list items using Ionic themes:
-•	color="primary"
-•	color="success"
-•	color="warning"
-•	color="danger"
-•	color="secondary"
-
+7.	To improve the visual appearance, we will add some color to our list items using Ionic themes:<br/>
+<li>color="primary"</li>
+<li>color="success"</li>
+<li>color="warning"</li>
+<li>color="danger"</li>
+<li>color="secondary"</li>
+<br/>
 8.	After the first page is ready, we will add a second page to our app. To do this, use the following command: (First, it needs to stop the live page “ctrl + c”)
 
 	<b>Ionic g page pages/TitleDetails</b><br/>
 
 9.	After creating the second page, a new folder called pages will appear in the SRC folder, containing the necessary files for the new page. If we check the app-routing.module.ts file, we will see a new route for the details page. Rename “title-details” to “details”.
     
-<h4>Important:</h4>h4>
-If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set standalone: false in the component metadata.
+<h4>Important:</h4>
+If there is an error in the title-details-routing.module.ts, go to title-details.page.ts and set standalone: false in the component metadata.<br/>
 
 11.	On the second page,title-details. page.html, we will add a Go Back button inside the <ion-title> to return to the home page:
-<p>
+<br/><p>"
  <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
@@ -81,12 +85,11 @@ If there is an error in the title-details-routing.module.ts, go to title-details
     Here's a small text description for the card content. Nothing more, nothing less.
   </ion-card-content>
 </ion-card>
-</p><br/>
-12.	Now, save the images in the assets folder. [Here](https://drive.google.com/file/d/14iyv0dbGAoO74eym30Wj-7vz04WSRbBi/view?usp=sharing) is the list.
-
+"</p><br/>
+12.	Now, save the images in the assets folder. <a href="https://drive.google.com/file/d/14iyv0dbGAoO74eym30Wj-7vz04WSRbBi/view?usp=sharing" target="_blank">Here</a> is the list.<br/>
 
 13.	Next, in home.page.ts, we will create a function to navigate to the second page when the user presses an item in the list. The function will also pass the title and image URL to the details page:
-<p>
+<p>"
 export class HomePage {
   constructor(private router: Router) {}
   goToDetails(title: string, imageUrl: string) {
@@ -95,11 +98,11 @@ export class HomePage {
     });
   }
 }
-	</p><br/>
-Important: import { Router } from '@angular/router';
+	"</p><br/>
+<b>Important: import { Router } from '@angular/router';</b><br/>
 
-14.	In details.page.ts, create a function to receive the information and display it in the card:
-    <p>
+14.	In details.page.ts, create a function to receive the information and display it in the card:<br/>
+    <p>"
 export class TitleDetailsPage implements OnInit {
   title: string = '';
   imageUrl: string = '';
@@ -113,25 +116,27 @@ export class TitleDetailsPage implements OnInit {
     });
   }
 }
-</p><br/>
-Important: import { ActivatedRoute } from '@angular/router';
+"</p><br/>
+<b>Important: import { ActivatedRoute } from '@angular/router';<\b><br/>
 
 15.	Finally, add the click event to each item in the list to pass the title and image to the second page(click)="goToDetails('Dragon Ball', 'assets/Goku.jpg')".
     <br/>
-16.	Finally, in title-details.page.html add the variable [src]="imagePath" and  [alt]="title" in the img tag:
-    <p>
+16.	Finally, in title-details.page.html add the variable [src]="imagePath" and  [alt]="title" in the img tag:<br/>
+    <p>"
 <img [src]="imagePath" [alt]="title" />
 
 In the title tag:
 
- <ion-card-title >{{ title }}</ion-card-title>   
+ <ion-card-title >{{ title }}</ion-card-title> "  
  </p><br/>
 <h3>Demo Application Finished()</h3>
-
+<br/>
 <h2>Additional information:</h2><br/>
+<br/>
 <b>Extension for IONIC:</b>
+<br/>
 The Ionic Extension for Visual Studio Code (VS Code) is a powerful tool that enhances the development experience when working with Ionic projects. It provides a variety of features to streamline, improve your workflow, including Code Snippets, Ionic Commands, and Integrated Debugging and Live Server Preview, among others.
-
+<br/>
 <h4>Run your project in Visual Studio Android, using these commands:</h4>
 •	npm install @capacitor/core @capacitor/cli
 •	npm install @capacitor/android
@@ -140,13 +145,13 @@ The Ionic Extension for Visual Studio Code (VS Code) is a powerful tool that enh
 •	npx cap sync android
 •	npx cap open android
 
-<b>Sources : </b>
-Official Ionic Framework :
-https://ionicframework.com/
-YouTube videos :
-https://www.youtube.com/watch?v=y_vwf15eADs
-Ionic Academy:
-https://ionicacademy.com/
+<b>Sources : </b><br/>
+Official Ionic Framework :<br/>
+https://ionicframework.com/<br/>
+YouTube videos :<br/>
+https://www.youtube.com/watch?v=y_vwf15eADs<br/>
+Ionic Academy:<br/>
+https://ionicacademy.com/<br/>
 
 
 
