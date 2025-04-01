@@ -1,6 +1,16 @@
 <h1>Introduction To Ionic Framework:</h1><br/>
 Ionic is an open-source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like Angular, React, and Vue. <br/> More explanation about Ionic in this YouTube video (7.24 minutes)<a href="https://www.youtube.com/watch?v=PLM9coCCIRY" target="_blank">Here</a>
 
+<h2>Environment Requires:</h2><br/>
+To get started with Ionic Framework, the only requirement is a Node.js & npm environment. Visual Studio Code is recommended.<br/>
+
+Download Node.js <a href="https://nodejs.org/en" target="_blank">here</a> <br/>
+
+<h3>Check the version in the terminal using this commands:</h3><br/>
+
+	node --version
+	npm --version
+
 
 <h2>About the Demo Application:</h2><br/>
 In this tutorial, we will create a simple application with two pages. On the first page, we will display an image and a list of 5 items. When the user presses one of the items, we will navigate to the second page, where a card with an image related to the title will be displayed.
@@ -152,7 +162,7 @@ In the title tag:
 <br/>
 The Ionic Extension for Visual Studio Code (VS Code) is a powerful tool that enhances the development experience when working with Ionic projects. It provides a variety of features to streamline, improve your workflow, including Code Snippets, Ionic Commands, and Integrated Debugging and Live Server Preview, among others.
 <br/>
-<h4>Run your project in Visual Studio Android, using these commands:</h4>
+<h4>If you want to run your project in Visual Studio Android, using these commands:</h4>
 <li>npm install @capacitor/core @capacitor/cli</li>
 <li>npm install @capacitor/android</li>
 <li>npx cap add android</li>
