@@ -1,5 +1,7 @@
 <h1>Introduction To Ionic Framework:</h1><br/>
-Ionic is an open-source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like Angular, React, and Vue.
+Ionic is an open-source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like Angular, React, and Vue. <br/> More explanation about Ionic in this YouTube video (7.24 minutes)here <a href="https://www.youtube.com/watch?v=PLM9coCCIRY" target="_blank">Here</a>
+
+
 <h2>About the Demo Application:</h2><br/>
 In this tutorial, we will create a simple application with two pages. On the first page, we will display an image and a list of 5 items. When the user presses one of the items, we will navigate to the second page, where a card with an image related to the title will be displayed.
 
@@ -139,7 +141,7 @@ If there is an error in the title-details-routing.module.ts, go to title-details
 In the title tag:
 <br/><br/>
 	
- 		<ion-card-title >{{ title }}</ion-card-title> "  
+ 		<ion-card-title >{{ title }}</ion-card-title>
 	
  <br/>
 <h3>Demo Application Finished()</h3>
