@@ -52,7 +52,7 @@ This will automatically open localhost in your browser. To visualize the app in 
       <ion-label>Dragon Ball</ion-label>
     </ion-item>
     <ion-item >
-      <ion-label>Hunter Knights of the Zodiac</ion-label>
+      <ion-label>Knights of the Zodiac</ion-label>
     </ion-item>
     <ion-item >
       <ion-label>Slam Dunk</ion-label>
