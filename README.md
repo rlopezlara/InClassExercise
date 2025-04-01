@@ -28,7 +28,7 @@ In this tutorial, we will create a simple application with two pages. On the fir
 
 4.	Once the project is set up, navigate to the project directory using:
 
-		  cd myAppDemo
+		  cd myDemoApp
   <br/>
 	To run the live page, use the following command:<br/>
 		
