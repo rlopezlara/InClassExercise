@@ -76,7 +76,7 @@ This will automatically open localhost in your browser. To visualize the app in 
 <br/>
 8.	After the first page is ready, we will add a second page to our app. To do this, use the following command: (First, it needs to stop the live page “ctrl + c”)
 
-		Ionic g page pages/TitleDetails
+		Ionic g page pages/titleDetails
 <br/>
 9.	After creating the second page, a new folder called pages will appear in the SRC folder, containing the necessary files for the new page. If we check the app-routing.module.ts file, we will see a new route for the details page. Rename “title-details” to “details”.
     
